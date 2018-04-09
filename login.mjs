@@ -19,6 +19,7 @@ export default class login{
                 if(/welcome/i.test(msg)){
                     console.log(`login message is ${msg}`);
                     console.log("Login successfully");
+                    driver.quit();
                   } 
                 })
            },(reason)=>{
