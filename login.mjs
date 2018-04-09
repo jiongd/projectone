@@ -24,6 +24,7 @@ export default class login{
                 })
            },(reason)=>{
                console.log("login failed");
+               driver.quit();
            })
        })
    }
