@@ -5,11 +5,10 @@ export default class login{
        this.username=username;
        this.password=password;
     }
-   userLogin(){
+   userLogin(url){
        let driver=new webdriver.Builder().forBrowser("chrome").build();
-       const msg_url="https://printshopstaging.lifetouch.com/login";
-       driver.get(msg_url);
-       driver.wait(webdriver.until.urlIs(msg_url),2000*10)
+       driver.get(url);
+       driver.wait(webdriver.until.urlIs(url),2000*10)
        .then((success)=>{
            driver.findElement(webdriver.By.xpath("//form[@id='login_form']//input[@id='Email']")).sendKeys(this.username);
            driver.findElement(webdriver.By.id("Password")).sendKeys(this.password);
