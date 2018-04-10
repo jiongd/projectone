@@ -7,7 +7,6 @@ export default class login{
        let driver=new webdriver.Builder().forBrowser("chrome").build();
     }
    userLogin(url){
-       let driver=new webdriver.Builder().forBrowser("chrome").build();
        driver.get(url);
        driver.wait(webdriver.until.urlIs(url),2000*10)
        .then((success)=>{
