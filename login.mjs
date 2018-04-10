@@ -8,7 +8,7 @@ export default class login{
     }
    userLogin(url){
        this.driver.get(url);
-       this.driver.wait(webdriver.until.urlIs(url),2000*10)
+       this.driver.wait(webdriver.until.urlIs(url),4000*10)
        .then((success)=>{
            this.driver.findElement(webdriver.By.xpath("//form[@id='login_form']//input[@id='Email']")).sendKeys(this.username);
            this.driver.findElement(webdriver.By.id("Password")).sendKeys(this.password);
@@ -19,7 +19,7 @@ export default class login{
                 if(/welcome/i.test(msg)){
                     console.log(`login message is ${msg}`);
                     console.log("Login successfully");
-                    this.driver.quit();
+                  //  this.driver.quit();
                   } 
                 })
            },(reason)=>{
@@ -28,6 +28,17 @@ export default class login{
            })
        })
    }
+  userLogout(){
+    this.driver.wait(webdriver.until.elementLocated(webdriver.By.linkText("Log out")),1000*30)
+    .then((success)=>{
+        this.driver.findElement(webdriver.By.linkText("Log out")).click()
+        .then(()=>{
+            //this.driver.findElement(webdriver.By.linkText("Log in"));
+            console.log("Have log out");
+        })
+        
+    })
 
+  }
  
 }
