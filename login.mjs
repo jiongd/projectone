@@ -4,6 +4,7 @@ export default class login{
     constructor(username,password){
        this.username=username;
        this.password=password;
+       let driver=new webdriver.Builder().forBrowser("chrome").build();
     }
    userLogin(url){
        let driver=new webdriver.Builder().forBrowser("chrome").build();
@@ -28,4 +29,6 @@ export default class login{
            })
        })
    }
+
+ 
 }
