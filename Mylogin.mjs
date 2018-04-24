@@ -7,5 +7,10 @@ const msg_url="https://printshopstaging.lifetouch.com/login";
 let driver=new webdriver.Builder().forBrowser("chrome").build(); 
 
 let objLogin=new login(username,password,driver);
+
+
+
 objLogin.userLogin(msg_url);
-objLogin.userLogout();
+//objLogin.userLogout();
+//objLogin.AccessCart();
+ objLogin.findProduct();
